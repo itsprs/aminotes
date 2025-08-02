@@ -1,0 +1,38 @@
+@theme inline {
+  --font-sans: var(--font-onest);
+}
+
+:root {
+  --space: 6rem;
+  --header-height: 4rem;
+}
+
+@layer base {
+  body {
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  ::-webkit-scrollbar {
+    @apply bg-accent/40 w-[4px];
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-md;
+  }
+  ::selection {
+    @apply text-accent-foreground bg-accent;
+  }
+}
+
+@layer custom {
+  .glassmorphism {
+    @apply bg-background/80 backdrop-blur-md;
+  }
+}
+
+@utility container {
+  @apply mx-auto w-full max-w-[1440px] px-4 md:px-8;
+}
