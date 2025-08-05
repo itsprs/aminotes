@@ -1,0 +1,27 @@
+[
+  {
+    "id": "dept_001",
+    "name": "Computer Science",
+    "code": "CSE"
+  },
+  {
+    "id": "dept_002",
+    "name": "Information Technology",
+    "code": "IT"
+  },
+  {
+    "id": "dept_003",
+    "name": "Electronics and Communication",
+    "code": "ECE"
+  },
+  {
+    "id": "dept_004",
+    "name": "Mechanical Engineering",
+    "code": "ME"
+  },
+  {
+    "id": "dept_005",
+    "name": "Civil Engineering",
+    "code": "CE"
+  }
+]

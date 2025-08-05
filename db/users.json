@@ -1,16 +1,35 @@
 [
   {
-    "id": "user_001",
-    "name": "John Doe",
-    "email": "john_doe@example.com",
-    "pwd": "user001pass",
-    "semester": [],
-    "department": [],
+    "id": "user_1754409797330",
     "files": [],
     "saved": [],
     "liked_by": [],
-    "is_teacher": false,
+    "created_at": "2025-08-05T16:03:17.330Z",
+    "name": "Test Student",
+    "email": "teststudent@gmail.com",
+    "pwd": "teststudent",
+    "departments": [
+      "dept_001"
+    ],
+    "semester": "3",
     "is_verifier": false,
-    "created_at": "2023-09-15T08:30:00Z"
+    "is_teacher": false
+  },
+  {
+    "id": "user_1754410020266",
+    "files": [],
+    "saved": [],
+    "liked_by": [],
+    "created_at": "2025-08-05T16:07:00.266Z",
+    "name": "jawahar vidya mandir shyamali ranchi jh",
+    "email": "prathamrajgi@gmail.com",
+    "pwd": "teststudent",
+    "departments": [
+      "dept_003",
+      "dept_004"
+    ],
+    "semester": "10",
+    "is_verifier": false,
+    "is_teacher": false
   }
 ]

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "item_001",
+    "title": "Python Programming Fundamentals",
+    "description": "An introductory guide to Python programming, covering basic syntax, data types, and control structures.",
+    "tags": ["Python", "Programming", "Basics"],
+    "code": "CSE205",
+    "path": "1.pdf",
+    "created_at": "2023-10-01T10:00:00Z",
+    "type": "type_001",
+    "uploaded_by": "user_001",
+    "liked_by": ["user_001", "user_002"],
+    "verified_by": ["user_001"],
+    "department": "dept_001",
+    "year": 2023,
+    "semester": 3
+  }
+]
