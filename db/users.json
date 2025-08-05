@@ -3,10 +3,7 @@
     "id": "user_001",
     "name": "John Doe",
     "email": "john_doe@example.com",
-    "cred": {
-      "username": "john_doe",
-      "password": "securepassword123"
-    },
+    "pwd": "user001pass",
     "semester": 3,
     "department": "dept_001",
     "files": ["item_001"],
