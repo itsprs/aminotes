@@ -11,8 +11,8 @@ export async function uploadFile(formData: FormData) {
 
   const bytes = await file.arrayBuffer()
   const buffer = Buffer.from(bytes)
-
   const uploadPath = path.join(process.cwd(), "public", "uploads", file.name)
+
   await writeFile(uploadPath, buffer)
 
   return {
@@ -24,29 +24,85 @@ export async function uploadFile(formData: FormData) {
 
 export async function deleteFile(filename: string) {
   const filePath = path.join(process.cwd(), "public", "uploads", filename)
-
   try {
     await unlink(filePath)
     return { success: true, message: "File deleted successfully" }
-  } catch (error) {
+  } catch {
     return { success: false, message: "File not found or cannot be deleted" }
   }
+}
+
+function getDBPath(fileName: string) {
+  return path.join(process.cwd(), "db", fileName)
+}
+
+export async function readDB<T = any>(fileName: string): Promise<T[]> {
+  const filePath = getDBPath(fileName)
+  const file = await fs.readFile(filePath, "utf-8")
+  return JSON.parse(file) as T[]
+}
+
+export async function writeDB<T = any>(
+  fileName: string,
+  data: T[],
+): Promise<void> {
+  const filePath = getDBPath(fileName)
+  await fs.writeFile(filePath, JSON.stringify(data, null, 2))
+}
+
+export async function findOne<T = any>(
+  fileName: string,
+  id: string,
+): Promise<T | null> {
+  const data = await readDB<T>(fileName)
+  return data.find((item: any) => item.id === id) || null
+}
+
+export async function createOne<T = any>(
+  fileName: string,
+  newItem: T,
+): Promise<T> {
+  const data = await readDB<T>(fileName)
+  data.push(newItem)
+  await writeDB(fileName, data)
+  return newItem
+}
+
+export async function updateOne<T = any>(
+  fileName: string,
+  id: string,
+  updatedFields: Partial<T>,
+): Promise<T | null> {
+  const data = await readDB<T>(fileName)
+  const index = data.findIndex((item: any) => item.id === id)
+  if (index === -1) return null
+
+  data[index] = { ...data[index], ...updatedFields }
+  await writeDB(fileName, data)
+  return data[index]
+}
+
+export async function deleteOne<T = any>(
+  fileName: string,
+  id: string,
+): Promise<T | null> {
+  const data = await readDB<T>(fileName)
+  const index = data.findIndex((item: any) => item.id === id)
+  if (index === -1) return null
+
+  const [deletedItem] = data.splice(index, 1)
+  await writeDB(fileName, data)
+  return deletedItem
 }
 
 export async function loginUser(formData: FormData) {
   const email = formData.get("email") as string
   const password = formData.get("password") as string
 
-  const filePath = path.join(process.cwd(), "db", "users.json")
-  const data = await fs.readFile(filePath, "utf-8")
-  const users = JSON.parse(data)
-
+  const users = await readDB<any>("users.json")
   const user = users.find((u: any) => u.email === email && u.pwd === password)
-  if (!user) return { success: false, message: "Invalid credentials" }
 
-  const isTeacher =
-    user.is_teacher &&
-    Object.values(user.is_teacher).some((v) => Array.isArray(v) && v.length > 0)
+  if (!user) return { success: false, message: "Invalid credentials" }
 
   return {
     success: true,
@@ -54,7 +110,7 @@ export async function loginUser(formData: FormData) {
       id: user.id,
       name: user.name,
       email: user.email,
-      role: isTeacher ? "teacher" : "student",
+      role: user.is_teacher ? "teacher" : "student",
     },
   }
 }

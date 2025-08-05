@@ -2,7 +2,7 @@
 
 import { useSession } from "@/lib/session-provider"
 
-export function DashboardContent() {
+export function Dashboard() {
   const { session, logout } = useSession()
 
   function handleLogout() {

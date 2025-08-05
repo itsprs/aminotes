@@ -1,7 +1,7 @@
 "use client"
 
 import { AuthContainer } from "@/components/auth-cont"
-import { DashboardContent } from "@/components/DashboardContent"
+import { Dashboard } from "@/components/Dashboard"
 import { LoginForm } from "@/components/LoginForm"
 import { useSession } from "@/lib/session-provider"
 
@@ -11,7 +11,7 @@ export default function DashboardPage() {
   return (
     <>
       {session ? (
-        <DashboardContent />
+        <Dashboard />
       ) : (
         <AuthContainer
           title="Login to Your Account"
