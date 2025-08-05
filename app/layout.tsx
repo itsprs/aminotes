@@ -2,17 +2,17 @@ import type { Metadata } from "next"
 import { Toaster } from "@/components/ui/sonner"
 import { fontVariables } from "@/lib/fonts"
 import { ThemeProvider } from "@/lib/theme-provider"
-import { site } from "@/data/site"
 import "@/app/globals.css"
-import { SiteHeader } from "@/components/function/site-header"
+import { Header } from "@/components/function/header"
+import { SessionProvider } from "@/lib/session-provider"
 
 export const metadata: Metadata = {
   title: {
-    default: site.name,
-    template: `%s | ${site.name}`,
+    default: "AmiNotes",
+    template: `%s | AmiNotes`,
   },
-  description: site.description,
-  keywords: site.keywords || [],
+  description: "Notes You Can Trust. From Students. Verified by Teachers.",
+  keywords: ["Education", "Study", "Notes", "AmiNotes", "Amity"],
 }
 
 export default function RootLayout({
@@ -31,8 +31,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <SiteHeader />
-          {children}
+          <SessionProvider>
+            <Header />
+            {children}
+          </SessionProvider>
           <Toaster expand />
         </ThemeProvider>
       </body>
