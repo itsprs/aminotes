@@ -2,7 +2,12 @@
 
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Button } from "@/components/ui/button"
-import { CircleUserRoundIcon, LogInIcon, UserPlusIcon } from "lucide-react"
+import {
+  CircleUserRoundIcon,
+  FileUpIcon,
+  LogInIcon,
+  UserPlusIcon,
+} from "lucide-react"
 import Link from "next/link"
 import { useSession } from "@/lib/session-provider"
 
@@ -17,11 +22,18 @@ export function Header() {
       </a>
       <div className="flex items-center gap-2">
         {session ? (
-          <Button variant="outline" size="sm" asChild>
-            <Link href="/dashboard">
-              <CircleUserRoundIcon size={16} /> Dashboard
-            </Link>
-          </Button>
+          <>
+            <Button size="sm" asChild>
+              <Link href="/upload">
+                <FileUpIcon /> Upload
+              </Link>
+            </Button>
+            <Button variant="outline" size="sm" asChild>
+              <Link href="/dashboard">
+                <CircleUserRoundIcon /> Dashboard
+              </Link>
+            </Button>
+          </>
         ) : (
           <>
             <Button variant="outline" size="sm" asChild>

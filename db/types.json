@@ -1,0 +1,46 @@
+[
+  {
+    "id": "type_005",
+    "type": "Notes"
+  },
+  {
+    "id": "type_006",
+    "type": "Lab Manual"
+  },
+  {
+    "id": "type_007",
+    "type": "Project Report"
+  },
+  {
+    "id": "type_008",
+    "type": "Research Paper"
+  },
+  {
+    "id": "type_009",
+    "type": "Presentation Slides"
+  },
+  {
+    "id": "type_010",
+    "type": "E-Book"
+  },
+  {
+    "id": "type_011",
+    "type": "Reference Material"
+  },
+  {
+    "id": "type_012",
+    "type": "Syllabus"
+  },
+  {
+    "id": "type_013",
+    "type": "Formulas Sheet"
+  },
+  {
+    "id": "type_014",
+    "type": "Case Study"
+  },
+  {
+    "id": "type_015",
+    "type": "Study Plan"
+  }
+]

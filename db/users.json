@@ -31,5 +31,37 @@
     "semester": "10",
     "is_verifier": false,
     "is_teacher": false
+  },
+  {
+    "id": "user_1754411498191",
+    "files": [],
+    "saved": [],
+    "liked_by": [],
+    "created_at": "2025-08-05T16:31:38.191Z",
+    "name": "test1",
+    "email": "john.doe@example.com",
+    "pwd": "test1111",
+    "departments": [
+      "dept_003"
+    ],
+    "semester": "6",
+    "is_verifier": false,
+    "is_teacher": false
+  },
+  {
+    "id": "user_1754456882463",
+    "files": [],
+    "saved": [],
+    "liked_by": [],
+    "created_at": "2025-08-06T05:08:02.463Z",
+    "name": "Prabhanshu",
+    "email": "prabhanshu@gmail.com",
+    "pwd": "PrabhaK123",
+    "departments": [
+      "dept_001"
+    ],
+    "semester": "3",
+    "is_verifier": false,
+    "is_teacher": false
   }
 ]

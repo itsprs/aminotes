@@ -3,16 +3,63 @@
     "id": "item_001",
     "title": "Python Programming Fundamentals",
     "description": "An introductory guide to Python programming, covering basic syntax, data types, and control structures.",
-    "tags": ["Python", "Programming", "Basics"],
+    "tags": [
+      "Python",
+      "Programming",
+      "Basics"
+    ],
     "code": "CSE205",
     "path": "1.pdf",
     "created_at": "2023-10-01T10:00:00Z",
-    "type": "type_001",
-    "uploaded_by": "user_001",
-    "liked_by": ["user_001", "user_002"],
-    "verified_by": ["user_001"],
+    "type": "type_005",
+    "uploaded_by": "user_1754410020266",
+    "liked_by": [
+      "user_1754410020266",
+      "user_002",
+      "user_1754411498191",
+      "user_1754456882463"
+    ],
+    "verified_by": [
+      "user_1754410020266"
+    ],
     "department": "dept_001",
     "year": 2023,
     "semester": 3
+  },
+  {
+    "id": "item_1754416267102",
+    "title": "Hello World",
+    "description": "youu",
+    "tags": [],
+    "code": "",
+    "path": "model_columns.pkl",
+    "created_at": "2025-08-05T17:51:07.102Z",
+    "type": "type_010",
+    "uploaded_by": "user_1754409797330",
+    "liked_by": [
+      "user_1754409797330"
+    ],
+    "verified_by": [],
+    "department": "dept_002",
+    "year": 2025,
+    "semester": 7
+  },
+  {
+    "id": "item_1754457007015",
+    "title": "jgjghfgdhfhd",
+    "description": "dnghsdsd",
+    "tags": [],
+    "code": "",
+    "path": "NewSyllabus_0021b037-dd41-496a-a322-19cbc91b3c94.pdf",
+    "created_at": "2025-08-06T05:10:07.015Z",
+    "type": "type_012",
+    "uploaded_by": "user_1754456882463",
+    "liked_by": [
+      "user_1754456882463"
+    ],
+    "verified_by": [],
+    "department": "dept_002",
+    "year": 2025,
+    "semester": 5
   }
 ]
